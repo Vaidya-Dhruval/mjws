@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot name="ridgeback" xmlns:xacro="http://ros.org/wiki/xacro" xmlns:ros2_control="http://ros.org/schema/ros2_control">
+
+  <link name="base_link" />
+
+  <joint name="front_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="front_left_wheel_link" />
+
+  <joint name="front_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="front_right_wheel_link" />
+
+  <joint name="rear_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rear_left_wheel_link" />
+
+  <joint name="rear_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="rear_right_wheel_link" />
+
+  <ros2_control name="RidgebackHardware" type="system">
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystem</plugin>
+    </hardware>
+
+    <joint name="front_left_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="front_right_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_left_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_right_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+</robot>

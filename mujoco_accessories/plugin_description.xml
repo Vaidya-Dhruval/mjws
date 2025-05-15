@@ -1,0 +1,7 @@
+<library path="mujoco_system_plugins">
+  <class name="mujoco_accessories/RidgebackSystemInterface"
+         type="mujoco_accessories::RidgebackSystemInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>MuJoCo SystemInterface for Ridgeback drive</description>
+  </class>
+</library>

@@ -1,0 +1,15 @@
+---
+ridgeback_velocity_controller:
+  ros__parameters:
+    type: diff_drive_controller/DiffDriveController
+    left_wheel_names: ["front_left_wheel", "rear_left_wheel"]
+    right_wheel_names: ["front_right_wheel", "rear_right_wheel"]
+    wheel_separation: 0.55
+    wheel_radius: 0.0759
+    publish_rate: 50.0
+    base_frame_id: base_link
+    use_stamped_vel: false
+    velocity_rolling_window_size: 10
+    open_loop: true
+    enable_odom_tf: false
+    cmd_vel_timeout: 0.25

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mujoco_accessories</name>
+  <version>0.1.0</version>
+  <description>Ridgeback robot simulated in MuJoCo with ROS 2 control</description>
+
+  <maintainer email="your@email.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>controller_manager</depend>
+  <depend>hardware_interface</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>velocity_controllers</depend>
+  <depend>mujoco_ros2_control</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

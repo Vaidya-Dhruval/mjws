@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="ridgeback">
+  <link name="base_link"/>
+  <link name="front_left_wheel_link"/>
+  <link name="front_right_wheel_link"/>
+  <link name="rear_left_wheel_link"/>
+  <link name="rear_right_wheel_link"/>
+
+  <joint name="front_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel_link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="front_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel_link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="rear_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel_link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="rear_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel_link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <ros2_control name="MujocoSystem" type="system">
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystem</plugin>
+    </hardware>
+
+    <joint name="front_left_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="front_right_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_left_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_right_wheel">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+</robot>
