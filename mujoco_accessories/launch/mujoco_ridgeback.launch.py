@@ -12,8 +12,7 @@ def generate_launch_description():
 
     mujoco_model_path = os.path.join(pkg_share, 'robot', 'ridgeback_default.xml')
     controller_config = os.path.join(pkg_share, 'configs', 'ridgeback_controllers.yaml')
-    jsb_config = os.path.join(pkg_share, 'configs', 'joint_state_broadcaster.yaml')
-    velocity_config = os.path.join(pkg_share, 'configs', 'ridgeback_velocity_controller.yaml')
+
 
     return LaunchDescription([
         Node(
@@ -36,14 +35,12 @@ def generate_launch_description():
             package='controller_manager',
             executable='spawner',
             arguments=['joint_state_broadcaster'],
-            parameters=[jsb_config],
             output='screen'
         ),
         Node(
             package='controller_manager',
             executable='spawner',
             arguments=['ridgeback_velocity_controller'],
-            parameters=[velocity_config],
             output='screen'
         )
     ])
